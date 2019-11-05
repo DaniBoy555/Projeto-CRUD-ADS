@@ -1,0 +1,42 @@
+
+LABORATORIO 01@LABORATORIO01 MINGW32 ~/Desktop/Projeto-CRUD-ADS (master)
+$ git add .
+
+LABORATORIO 01@LABORATORIO01 MINGW32 ~/Desktop/Projeto-CRUD-ADS (master)
+$ git commit -m "CRUD Inicial"
+[master a3ce217] CRUD Inicial
+ 11 files changed, 1652 insertions(+), 2 deletions(-)
+ create mode 100644 ProjetoCRUD/build.xml
+ create mode 100644 ProjetoCRUD/manifest.mf
+ create mode 100644 ProjetoCRUD/nbproject/build-impl.xml
+ create mode 100644 ProjetoCRUD/nbproject/genfiles.properties
+ create mode 100644 ProjetoCRUD/nbproject/private/private.properties
+ create mode 100644 ProjetoCRUD/nbproject/private/private.xml
+ create mode 100644 ProjetoCRUD/nbproject/project.properties
+ create mode 100644 ProjetoCRUD/nbproject/project.xml
+ create mode 100644 ProjetoCRUD/src/univs/edu/usuario/Usuario.java
+ delete mode 100644 README.md
+ delete mode 100644 TESTE.txt
+
+LABORATORIO 01@LABORATORIO01 MINGW32 ~/Desktop/Projeto-CRUD-ADS (master)
+$ git puch
+git: 'puch' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+
+LABORATORIO 01@LABORATORIO01 MINGW32 ~/Desktop/Projeto-CRUD-ADS (master)
+$ git push
+Username for 'https://github.com': dancustodio55@gmail.com
+080Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (18/18), 13.54 KiB | 1.93 MiB/s, done.
+Total 18 (delta 0), reused 0 (delta 0)
+To https://github.com/DaniBoy555/Projeto-CRUD-ADS.git
+   d8b2547..a3ce217  master -> master
+
+LABORATORIO 01@LABORATORIO01 MINGW32 ~/Desktop/Projeto-CRUD-ADS (master)
+$ 080
+
