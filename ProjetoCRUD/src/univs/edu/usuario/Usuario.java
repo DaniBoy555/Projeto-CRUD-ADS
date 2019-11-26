@@ -7,38 +7,36 @@ import javax.persistence.Id;
 
 /**
  *
- * @author LABORATORIO
+ * @author Daniel victor
  */
 @Entity
 public class Usuario {
 
     @Id
     @GeneratedValue
-    private int idUsuario;
+    private int id;
 
-    @Column(length = 100, nullable = false)
-    private String nomeUsuario;
-    
-    @Column(length = 100, nullable = false, unique = true)
+    @Column(nullable = false, length = 150)
+    private String nome;
+
     private String login;
-    
-    @Column(length = 100, nullable = false)
+
     private String senha;
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public int getId() {
+        return id;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNomeUsuario() {
-        return nomeUsuario;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeUsuario(String nomeUsuario) {
-        this.nomeUsuario = nomeUsuario;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getLogin() {

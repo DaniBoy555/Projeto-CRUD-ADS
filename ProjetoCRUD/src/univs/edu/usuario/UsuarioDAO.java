@@ -1,50 +1,64 @@
+
 package univs.edu.usuario;
 
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
-import univs.edu.util.HibernateUtil;
+import unvs.edu.util.HibernateUtil;
+
+/**
+ *
+ * @author Daniel Victor
+ */
 
 public class UsuarioDAO {
-
-    private Session sessao;
-    private Transaction transacao;
-
-    public void salvar(Usuario usuario) {
+    
+    Session sessao;
+    Transaction transacao;
+    
+    public void salvarUsuario(Usuario usuario){
         sessao = HibernateUtil.getSessionFactory().openSession();
         transacao = sessao.beginTransaction();
-        if (usuario.getIdUsuario() == 0) {
-            sessao.save(usuario);
-        } else {
-            sessao.update(usuario);
-        }
         sessao.save(usuario);
         transacao.commit();
         sessao.close();
-
     }
-
-    public void excluir(Usuario usuario) {
+    
+    public void editarUsuario(Usuario usuario){
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        transacao = sessao.beginTransaction();
+        sessao.update(usuario);
+        transacao.commit();
+        sessao.close();
+    }
+    
+    public void excluirUsuario(Usuario usuario){
         sessao = HibernateUtil.getSessionFactory().openSession();
         transacao = sessao.beginTransaction();
         sessao.delete(usuario);
         transacao.commit();
         sessao.close();
     }
-
-    public Usuario pesquisar(int id) {
-        sessao = HibernateUtil.getSessionFactory().openSession();
-        transacao = sessao.beginTransaction();
-        Usuario usuario = (Usuario) sessao.createCriteria(Usuario.class).add(Restrictions.eq("idUsuario", id)).uniqueResult();
-        return usuario;
-    }
-
-    public List<Usuario> pesquisar() {
+    
+    public List<Usuario> listarUsuario(){
         sessao = HibernateUtil.getSessionFactory().openSession();
         transacao = sessao.beginTransaction();
         List<Usuario> usuarios = sessao.createCriteria(Usuario.class).list();
+        sessao.close();
         return usuarios;
     }
-
+    
+    public Usuario pesquisarUsuarioId(int id){
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        transacao = sessao.beginTransaction();
+        Usuario usuario = (Usuario) sessao.createCriteria(Usuario.class).add(Restrictions.eq("id", id)).uniqueResult();
+        sessao.close();
+        return usuario;
+    }
+    
+    
+    
+    
+    
 }
