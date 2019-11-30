@@ -73,6 +73,11 @@ public class PesquisaUsuario extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setText("Editar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,7 +131,23 @@ public class PesquisaUsuario extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, " Selecione uma linha");
         }
+
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int linha = tabelaUsuario.getSelectedRow();
+        if (linha != - 1) {
+            int id = (int) tabelaUsuario.getValueAt(linha, 0);
+            usuario = dao.pesquisar(id);
+            TelaUsuario tela = new TelaUsuario();
+            tela.carregarUsuario(usuario);
+            tela.setVisible(true);
+            dispose();
+ 
+        } else {
+            JOptionPane.showMessageDialog(null, " Selecione uma linha");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
